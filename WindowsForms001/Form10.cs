@@ -36,8 +36,8 @@ namespace WindowsForms001
                 SqlDataAdapter adaptador2 = new SqlDataAdapter(sql2, conexion);
                 adaptador2.Fill(dataSet11, "LineasFactura");
 
-                dataSet11.Relations.Add("Relacion", dataSet11.Tables["Factura"].Columns["numero"],
-                    dataSet11.Tables["LineasFactura"].Columns["factura_numero"]);
+                /*dataSet11.Relations.Add("Relacion", dataSet11.Tables["Factura"].Columns["numero"],
+                    dataSet11.Tables["LineasFactura"].Columns["factura_numero"]);*/
 
                 dataGridView1.DataSource = dataSet11;
                 dataGridView1.DataMember = "Factura";

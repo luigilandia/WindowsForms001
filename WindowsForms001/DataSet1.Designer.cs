@@ -237,7 +237,7 @@ namespace WindowsForms001 {
             base.Tables.Add(this.tableLineasFactura);
             this.relationFactura_LineasFactura = new global::System.Data.DataRelation("Factura_LineasFactura", new global::System.Data.DataColumn[] {
                         this.tableFactura.NumeroColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLineasFactura.Factura_NumeroColumn}, false);
+                        this.tableLineasFactura.factura_numeroColumn}, false);
             this.Relations.Add(this.relationFactura_LineasFactura);
         }
         
@@ -593,13 +593,11 @@ namespace WindowsForms001 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class LineasFacturaDataTable : global::System.Data.TypedTableBase<LineasFacturaRow> {
             
-            private global::System.Data.DataColumn columnNumero;
+            private global::System.Data.DataColumn columnnumero;
             
-            private global::System.Data.DataColumn columnFactura_Numero;
+            private global::System.Data.DataColumn columnfactura_numero;
             
-            private global::System.Data.DataColumn columnProduct_Id;
-            
-            private global::System.Data.DataColumn columnUnidades;
+            private global::System.Data.DataColumn columnproduct_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -636,33 +634,25 @@ namespace WindowsForms001 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn NumeroColumn {
+            public global::System.Data.DataColumn numeroColumn {
                 get {
-                    return this.columnNumero;
+                    return this.columnnumero;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Factura_NumeroColumn {
+            public global::System.Data.DataColumn factura_numeroColumn {
                 get {
-                    return this.columnFactura_Numero;
+                    return this.columnfactura_numero;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Product_IdColumn {
+            public global::System.Data.DataColumn product_idColumn {
                 get {
-                    return this.columnProduct_Id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn UnidadesColumn {
-                get {
-                    return this.columnUnidades;
+                    return this.columnproduct_id;
                 }
             }
             
@@ -703,13 +693,12 @@ namespace WindowsForms001 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LineasFacturaRow AddLineasFacturaRow(int Numero, FacturaRow parentFacturaRowByFactura_LineasFactura, string Product_Id, int Unidades) {
+            public LineasFacturaRow AddLineasFacturaRow(int numero, FacturaRow parentFacturaRowByFactura_LineasFactura, string product_id) {
                 LineasFacturaRow rowLineasFacturaRow = ((LineasFacturaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Numero,
+                        numero,
                         null,
-                        Product_Id,
-                        Unidades};
+                        product_id};
                 if ((parentFacturaRowByFactura_LineasFactura != null)) {
                     columnValuesArray[1] = parentFacturaRowByFactura_LineasFactura[0];
                 }
@@ -720,10 +709,10 @@ namespace WindowsForms001 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LineasFacturaRow FindByNumeroFactura_Numero(int Numero, int Factura_Numero) {
+            public LineasFacturaRow FindBynumerofactura_numero(int numero, int factura_numero) {
                 return ((LineasFacturaRow)(this.Rows.Find(new object[] {
-                            Numero,
-                            Factura_Numero})));
+                            numero,
+                            factura_numero})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -743,28 +732,25 @@ namespace WindowsForms001 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnNumero = base.Columns["Numero"];
-                this.columnFactura_Numero = base.Columns["Factura_Numero"];
-                this.columnProduct_Id = base.Columns["Product_Id"];
-                this.columnUnidades = base.Columns["Unidades"];
+                this.columnnumero = base.Columns["numero"];
+                this.columnfactura_numero = base.Columns["factura_numero"];
+                this.columnproduct_id = base.Columns["product_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnNumero = new global::System.Data.DataColumn("Numero", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumero);
-                this.columnFactura_Numero = new global::System.Data.DataColumn("Factura_Numero", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFactura_Numero);
-                this.columnProduct_Id = new global::System.Data.DataColumn("Product_Id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProduct_Id);
-                this.columnUnidades = new global::System.Data.DataColumn("Unidades", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUnidades);
+                this.columnnumero = new global::System.Data.DataColumn("numero", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero);
+                this.columnfactura_numero = new global::System.Data.DataColumn("factura_numero", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfactura_numero);
+                this.columnproduct_id = new global::System.Data.DataColumn("product_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproduct_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnNumero,
-                                this.columnFactura_Numero}, true));
-                this.columnNumero.AllowDBNull = false;
-                this.columnFactura_Numero.AllowDBNull = false;
+                                this.columnnumero,
+                                this.columnfactura_numero}, true));
+                this.columnnumero.AllowDBNull = false;
+                this.columnfactura_numero.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -972,55 +958,39 @@ namespace WindowsForms001 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Numero {
+            public int numero {
                 get {
-                    return ((int)(this[this.tableLineasFactura.NumeroColumn]));
+                    return ((int)(this[this.tableLineasFactura.numeroColumn]));
                 }
                 set {
-                    this[this.tableLineasFactura.NumeroColumn] = value;
+                    this[this.tableLineasFactura.numeroColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Factura_Numero {
+            public int factura_numero {
                 get {
-                    return ((int)(this[this.tableLineasFactura.Factura_NumeroColumn]));
+                    return ((int)(this[this.tableLineasFactura.factura_numeroColumn]));
                 }
                 set {
-                    this[this.tableLineasFactura.Factura_NumeroColumn] = value;
+                    this[this.tableLineasFactura.factura_numeroColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Product_Id {
+            public string product_id {
                 get {
                     try {
-                        return ((string)(this[this.tableLineasFactura.Product_IdColumn]));
+                        return ((string)(this[this.tableLineasFactura.product_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Product_Id\' de la tabla \'LineasFactura\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'product_id\' de la tabla \'LineasFactura\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLineasFactura.Product_IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Unidades {
-                get {
-                    try {
-                        return ((int)(this[this.tableLineasFactura.UnidadesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Unidades\' de la tabla \'LineasFactura\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableLineasFactura.UnidadesColumn] = value;
+                    this[this.tableLineasFactura.product_idColumn] = value;
                 }
             }
             
@@ -1037,26 +1007,14 @@ namespace WindowsForms001 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsProduct_IdNull() {
-                return this.IsNull(this.tableLineasFactura.Product_IdColumn);
+            public bool Isproduct_idNull() {
+                return this.IsNull(this.tableLineasFactura.product_idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetProduct_IdNull() {
-                this[this.tableLineasFactura.Product_IdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsUnidadesNull() {
-                return this.IsNull(this.tableLineasFactura.UnidadesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetUnidadesNull() {
-                this[this.tableLineasFactura.UnidadesColumn] = global::System.Convert.DBNull;
+            public void Setproduct_idNull() {
+                this[this.tableLineasFactura.product_idColumn] = global::System.Convert.DBNull;
             }
         }
         

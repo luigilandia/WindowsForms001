@@ -25,8 +25,6 @@ namespace WindowsForms001
             /*IPersonaRepository repo = new PersonaRepositoryMemoria();
             dataGridView1.DataSource = repo.BuscarTodos();*/
             CargarTabla();
-
-
         }
 
         private void CargarTabla()

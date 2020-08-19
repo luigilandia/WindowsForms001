@@ -24,7 +24,13 @@ namespace WindowsForms001
         {
             /*IPersonaRepository repo = new PersonaRepositoryMemoria();
             dataGridView1.DataSource = repo.BuscarTodos();*/
+            CargarTabla();
 
+
+        }
+
+        private void CargarTabla()
+        {
             ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["miconexion"];
             String cadena = settings.ConnectionString;
             using (
@@ -40,6 +46,7 @@ namespace WindowsForms001
                 dataGridView1.DataSource = table;
 
             }
+
         }
 
         private void botonAceptar_Click(object sender, EventArgs e)

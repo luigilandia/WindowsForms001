@@ -115,5 +115,27 @@ namespace WindowsForms001
         {
             bindingSource1.MoveLast();
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            bindingSource1.Sort = "Concepto";
+        }
+
+        private void bindingSource1_PositionChanged(object sender, EventArgs e)
+        {
+            label1.Text = bindingSource1.Position.ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            bindingSource1.Filter = "Concepto='" + filtrotxt.Text + "'";
+            //bindingSource1.DataSource = midataset.Tables["Factura"];
+            //bindingSource1.RemoveFilter();
+        }
+
+        private void bindingNavigator1_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
     }
 }

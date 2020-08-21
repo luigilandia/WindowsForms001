@@ -19,6 +19,8 @@ using System.Windows.Forms;
 namespace WindowsForms001
 {
     public partial class Form14 : Form
+
+        //Hacer lo mismo que en el caso anterior pero con IservicioFacturas
     {
         DataSet midataset;
         public Form14()

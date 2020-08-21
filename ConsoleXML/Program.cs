@@ -27,6 +27,17 @@ namespace ConsoleXML
             edad.InnerText = "34";
             elemento.AppendChild(edad);
 
+            nombre.InnerText = "Luis";
+            elemento.AppendChild(nombre);
+            atributo.InnerText = "456789";
+            elemento.Attributes.Append(atributo);
+            
+            apellidos.InnerText = "García";
+            elemento.AppendChild(apellidos);
+
+            edad.InnerText = "40";
+            elemento.AppendChild(edad);
+
             XmlWriter escritor = new XmlTextWriter("persona.xml", null);
             documento.Save(escritor);
             Console.ReadLine();

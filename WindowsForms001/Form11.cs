@@ -16,6 +16,7 @@ namespace WindowsForms001
     {
         DataSet midataset;
         SqlDataAdapter adaptador1 = new SqlDataAdapter();
+
         public Form11()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace WindowsForms001
 
         private void Form11_Load(object sender, EventArgs e)
         {
+            
             midataset = new DataSet();
 
             ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["miconexion"];
@@ -71,10 +73,13 @@ namespace WindowsForms001
 
                 adaptador1.Fill(midataset, "Factura");
 
+                /*dataGridView1.DataSource = midataset;
+                dataGridView1.DataMember = "Factura";*/
 
-                dataGridView1.DataSource = midataset;
-                dataGridView1.DataMember = "Factura";
-
+                bindingSource1.DataSource = midataset.Tables["Factura"];
+                dataGridView1.DataSource = bindingSource1;
+                txtBoxNumero.DataBindings.Add("Text", bindingSource1, "Numero");
+                txtBoxConcepto.DataBindings.Add("Text", bindingSource1, "Concepto");
             }
         }
 
@@ -88,6 +93,27 @@ namespace WindowsForms001
             DataGridViewRow fila = dataGridView1.CurrentRow;
             dataGridView1.Rows.Remove(fila);
             adaptador1.Update(midataset, "Factura");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bindingSource1.MoveNext();
+
+        }
+
+        private void btnRetroceder_Click(object sender, EventArgs e)
+        {
+            bindingSource1.MovePrevious();
+        }
+
+        private void btnPrimero_Click(object sender, EventArgs e)
+        {
+            bindingSource1.MoveFirst();
+        }
+
+        private void btnUltimo_Click(object sender, EventArgs e)
+        {
+            bindingSource1.MoveLast();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿
 using ADO.NET.Persistencia;
-using Persistencia.Semicrol.Cursos.Persistencia;
+
 using Semicrol.Cursos.Dominio;
 using Semicrol.Cursos.Servicios;
 using Servicios.Semicrol.Cursos.Servicios;

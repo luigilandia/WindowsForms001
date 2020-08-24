@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<personas>
+  <persona>
+    <nombre>Pedro</nombre>
+    <apellido>Sánchez</apellido>
+    <edad>40</edad>
+  </persona>
+  <persona>
+    <nombre>María</nombre>
+    <apellido>García</apellido>
+    <edad>50</edad>
+  </persona>
+</personas>

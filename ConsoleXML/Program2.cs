@@ -11,9 +11,10 @@ namespace ConsoleXML
     {
         static void Main(string[] args)
         {
-            XmlReader lector = new XmlTextReader("persona.xml");
+            XmlReader lector = new XmlTextReader("Persona.xml");
             while (lector.Read())
             {
+                //Console.WriteLine(lector.Name);
                 if (lector.NodeType == XmlNodeType.Element)
                 {
                     Console.WriteLine(lector.Name);
@@ -22,6 +23,7 @@ namespace ConsoleXML
                 {
                     Console.WriteLine(lector.Value);
                 }
+
             }
             Console.ReadLine();
         }

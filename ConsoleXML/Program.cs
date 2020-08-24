@@ -14,33 +14,26 @@ namespace ConsoleXML
             XmlDocument documento = new XmlDocument();
             XmlElement elemento = documento.CreateElement("persona");
             documento.AppendChild(elemento);
+
             XmlElement nombre = documento.CreateElement("nombre");
-            nombre.InnerText = "Pedro";
+            nombre.InnerText = "Fulanito";
             elemento.AppendChild(nombre);
-            XmlAttribute atributo = documento.CreateAttribute("telefono");
+
+            XmlElement apellido = documento.CreateElement("apellido");
+            elemento.AppendChild(apellido);
+            apellido.InnerText = "Detal";
+
+            XmlElement edad = documento.CreateElement("edad");
+            edad.InnerText = "37";
+            elemento.AppendChild(edad);
+
+            XmlAttribute atributo = documento.CreateAttribute("Telefono");
             atributo.InnerText = "123456";
             elemento.Attributes.Append(atributo);
-            XmlElement apellidos = documento.CreateElement("apellidos");
-            apellidos.InnerText = "Alvarez";
-            elemento.AppendChild(apellidos);
-            XmlElement edad = documento.CreateElement("edad");
-            edad.InnerText = "34";
-            elemento.AppendChild(edad);
 
-            nombre.InnerText = "Luis";
-            elemento.AppendChild(nombre);
-            atributo.InnerText = "456789";
-            elemento.Attributes.Append(atributo);
-            
-            apellidos.InnerText = "García";
-            elemento.AppendChild(apellidos);
 
-            edad.InnerText = "40";
-            elemento.AppendChild(edad);
-
-            XmlWriter escritor = new XmlTextWriter("persona.xml", null);
+            XmlWriter escritor = new XmlTextWriter("Persona.xml", null);
             documento.Save(escritor);
-            Console.ReadLine();
         }
     }
 }

@@ -2,8 +2,8 @@
     ViewBag.Title = "Home Page";
 }
 <script type="text/javascript">
-alert("hola");
-function mensaje(){
+//alert("hola");
+/*function mensaje(){
 //alert("Has pulsado");
 //var mensaje="hola qué tal";
 //esto es un objeto de JavaScript, hasta js6 no llegan las clases
@@ -20,10 +20,22 @@ p.appendChild(texto);
     midocumento.appendChild(p);
 
     
-    }
+    }*/
     $(document).ready(function () {
-        alert("jquery funciona");
+        //alert("jquery funciona");
+        $("#boton").click(function () {
+            alert("Hola");
+            $.get("../../api/webapi", function (datos) {
+
+                datos.forEach(function (dato) {
+                    $("#mitabla").append("<tr><td>"+dato.Numero+"</td><td>"+dato.Concepto+"</td></tr");
+                })
+                //console.log(datos);
+            })
+        })
     });
 </script>
+<table id="mitabla">
 
-<input type="button" value="Aceptar" onclick="mensaje()" />
+</table>
+<input type="button" value="Aceptar" id="boton" />

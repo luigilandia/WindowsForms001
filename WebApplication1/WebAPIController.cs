@@ -8,16 +8,21 @@ using WebApplication1.Models;
 
 namespace WebApplication1
 {
-    public class WebAPIController : ApiController
+    public class FacturasController : ApiController
     {
         // GET api/<controller>
-        public IList<Factura> Get()
+        static List<Factura> lista = new List<Factura>();
+        static FacturasController()
         {
             Factura f = new Factura(1, "ordenador");
             Factura f2 = new Factura(2, "tablet");
-            List<Factura> lista = new List<Factura>();
+
             lista.Add(f);
             lista.Add(f2);
+        }
+
+        public IList<Factura> Get()
+        {
             return lista;
         }
 
@@ -28,8 +33,9 @@ namespace WebApplication1
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post([FromBody] Factura factura)
         {
+            lista.Add(factura);
         }
 
         // PUT api/<controller>/5
